@@ -3,14 +3,5 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "echo 'Setup 1/2 complete! Please run ./setup2.sh to finish setup. Refer to section [Setup] for more details.'", // Updated to echo the message
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
-      },
-      "extensions": []
-    }
-  },
-  "remoteUser": "vscode"
+  "postCreateCommand": "echo 'Setup 1/2 complete! Please run ./setup2.sh to finish setup. Refer to section [Setup] for more details.'"
 }
