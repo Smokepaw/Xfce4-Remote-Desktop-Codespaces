@@ -3,7 +3,7 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "./setup.sh",
+  "postCreateCommand": "echo 'Setup 1/2 complete! Please run ./setup2.sh to finish setup. Refer to section [Setup] for more details.'", // Updated to echo the message
   "customizations": {
     "vscode": {
       "settings": {
