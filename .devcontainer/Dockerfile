@@ -1,11 +1,9 @@
 FROM ubuntu:latest
 
+
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
-    software-properties-common \
-    && add-apt-repository ppa:xfce/xfce4-desktop \
-    && apt-get update \
-    && apt-get install -y xfce4 xfce4-goodies git \
+    xfce4 xfce4-goodies git \
     && apt-get clean \
     && mkdir -p ~/.vnc
 
