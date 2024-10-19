@@ -25,4 +25,4 @@ RUN chmod +x /usr/local/bin/setup.sh /usr/local/bin/setup2.sh /usr/local/bin/sta
 EXPOSE 6080 6081
 
 # Default command to run when the container starts
-CMD ["bash", "-c", "echo 'Setup 1/2 complete! Please run ./setup2.sh to finish setup. Refer to section [Setup] for more details.' && exec bash"]
+CMD ["bash", "-c", "echo 'kept for educational purposes!' && exec bash"]
