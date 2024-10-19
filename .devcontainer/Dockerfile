@@ -16,7 +16,7 @@ RUN git clone https://github.com/novnc/noVNC.git /noVNC
 SHELL ["/bin/bash", "-c"]
 
 # Copy the necessary scripts into the container
-COPY ../setup.sh ../setup2.sh ../start.sh ../start_vnc.sh /usr/local/bin/
+COPY ./setup.sh ./setup2.sh ./start.sh ./start_vnc.sh /usr/local/bin/
 
 # Set execute permissions for the scripts
 RUN chmod +x /usr/local/bin/setup.sh /usr/local/bin/setup2.sh /usr/local/bin/start.sh /usr/local/bin/start_vnc.sh
