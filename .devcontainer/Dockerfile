@@ -22,5 +22,14 @@ RUN chmod +x /usr/local/bin/setup.sh /usr/local/bin/setup2.sh /usr/local/bin/sta
 # Expose ports for noVNC
 EXPOSE 6080 6081
 
+# Copy entrypoint script into the container
+COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
+
+# Make it executable
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
 # Default command to run when the container starts
 CMD ["bash", "-c", "echo 'kept for educational purposes!' && exec bash"]
