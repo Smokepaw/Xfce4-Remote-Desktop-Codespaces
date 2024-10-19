@@ -1,0 +1,12 @@
+{
+  "name": "Xfce4 and noVNC Setup",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "./setup.sh",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [],
+  "remoteUser": "vscode"
+}
