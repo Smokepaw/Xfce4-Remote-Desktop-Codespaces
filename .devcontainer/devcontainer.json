@@ -1,5 +1,5 @@
 {
-  "name": "Xfce4 and noVNC Setup",
+  "name": "Starclan's Prophecy",
   "build": {
     "dockerfile": "Dockerfile"
   },
