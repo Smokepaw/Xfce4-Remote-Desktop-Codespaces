@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y \
     && add-apt-repository ppa:xfce/xfce4-desktop \
     && apt-get update \
     && apt-get install -y xfce4 xfce4-goodies \
-    && apt-get clean
+    && apt-get clean \
+    && mkdir -p ~/.vnc
 
 # Set the default shell to bash
 SHELL ["/bin/bash", "-c"]
