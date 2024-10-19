@@ -1,17 +1,42 @@
 FROM ubuntu:latest
 
-
-# Install necessary packages
+# Install necessary packages and tools
 RUN apt-get update && apt-get install -y \
-    xfce4 xfce4-goodies git \
+    software-properties-common \
+    sudo \
+    curl \
+    wget \
+    git \
+    lsb-release \
+    xfce4 \
+    xfce4-goodies \
+    locales \
     && apt-get clean \
     && mkdir -p ~/.vnc
 
-# Clone the noVNC repository
-RUN git clone https://github.com/novnc/noVNC.git /noVNC
+# Set the locale
+RUN locale-gen en_US.UTF-8 && \
+    update-locale LANG=en_US.UTF-8
+
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+# Install Bash-completion for better command line experience
+RUN apt-get install -y bash-completion
+
+# Clone the noVNC repository into the current directory
+RUN git clone https://github.com/novnc/noVNC.git ./noVNC
 
 # Set the default shell to bash
 SHELL ["/bin/bash", "-c"]
+
+# Add color support to the bash prompt
+RUN echo "export PS1='\\[\\e[1;32m\\]\\u@\\h:\\[\\e[1;34m\\]\\w\\[\\e[0m\\]\\$ '" >> ~/.bashrc && \
+    echo "alias ll='ls -la --color=auto'" >> ~/.bashrc && \
+    echo "alias grep='grep --color=auto'" >> ~/.bashrc && \
+    echo "alias diff='diff --color=auto'" >> ~/.bashrc && \
+    echo "alias cls='clear'" >> ~/.bashrc
 
 # Copy the necessary scripts into the container
 COPY ./setup.sh ./setup2.sh ./start.sh ./start_vnc.sh /usr/local/bin/
