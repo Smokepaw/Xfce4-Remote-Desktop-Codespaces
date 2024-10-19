@@ -4,9 +4,13 @@
     "dockerfile": "Dockerfile"
   },
   "postCreateCommand": "./setup.sh",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": []
+    }
   },
-  "extensions": [],
   "remoteUser": "vscode"
 }
