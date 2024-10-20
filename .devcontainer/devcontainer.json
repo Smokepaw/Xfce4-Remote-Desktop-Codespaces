@@ -4,5 +4,5 @@
     "dockerfile": "Dockerfile"
   },
   "postCreateCommand": "echo 'Setup 1/2 complete! Please run ./setup2.sh to finish setup. Refer to section [Setup] for more details.'",
-  "postStartCommand": "/usr/local/bin/start_vnc.sh"  // Starts vnc when the Codespace starts
+  "postStartCommand": "/workspaces/Xfce4-Remote-Desktop-Codespaces/start_vnc.sh"  // Starts vnc when the Codespace starts
 }
