@@ -38,11 +38,9 @@ RUN echo "export PS1='\\[\\e[1;32m\\]\\u@\\h:\\[\\e[1;34m\\]\\w\\[\\e[0m\\]\\$ '
     echo "alias diff='diff --color=auto'" >> ~/.bashrc && \
     echo "alias cls='clear'" >> ~/.bashrc
 
-# Copy the necessary scripts into the container
-COPY ./setup.sh ./setup2.sh ./start.sh ./start_vnc.sh /usr/local/bin/
 
 # Set execute permissions for the scripts
-RUN chmod +x /usr/local/bin/setup.sh /usr/local/bin/setup2.sh /usr/local/bin/start.sh /usr/local/bin/start_vnc.sh
+RUN chmod +x /workspaces/Xfce4-Remote-Desktop-Codespaces/setup.sh /workspaces/Xfce4-Remote-Desktop-Codespaces/setup2.sh /workspaces/Xfce4-Remote-Desktop-Codespaces/start.sh /workspaces/Xfce4-Remote-Desktop-Codespaces/start_vnc.sh
 
 # Expose ports for noVNC
 EXPOSE 6080 6081
